@@ -122,7 +122,7 @@
   };
 </script>
 
-  <title>BI8CKU与树德中学国际部业余无线电</title>
+  <title>BI8CKU与树德中学国际部业余无线电 – BI8CKU and Shude High School Amateur Radio Club</title>
   
 
 
@@ -188,7 +188,7 @@
     </div>
     
       
-        <p class="site-subtitle">BI8CKU and Shude High School Amateur Radio Club</p>
+        <h1 class="site-subtitle" itemprop="description">BI8CKU and Shude High School Amateur Radio Club</h1>
       
     
     
@@ -309,13 +309,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
                 
                 <a href="/2019/03/26/使用Hexo与Github-Pages搭建博客/" class="post-title-link" itemprop="url">使用Hexo与GitHub Pages搭建博客</a>
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -378,44 +378,20 @@
       
         
           
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。</p>
-<p>为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；第二点就是因为GitHub的安全性与稳定性，GitHub作为全世界最大的源代码托管库，其安全性和稳定性是毋庸置疑的（当然，如果你的GitHub账户密码太弱，也没有开启二步验证，你的GitHub Pages肯定是处于危险中了），并且可以启用https协议，进一步增加安全性，而如果使用VPS，一切安全设置都要自己解决，且稳定性很难做到GitHub的水平，一旦被DDoS，也只能关站。</p>
-<center>注：以下全部操作仅在Ubuntu下测试过，不保证在其他平台上的可用性</center>
-
-<h1 id="注册GitHub并创建GitHub-Pages"><a href="#注册GitHub并创建GitHub-Pages" class="headerlink" title="注册GitHub并创建GitHub Pages"></a>注册GitHub并创建GitHub Pages</h1><p>GitHub Pages显然需要GitHub的账号，关于如何注册这里就不赘述了，相信来到这里的各位一定以及拥有了自己的账号。</p>
-<p>那如何创建自己的GitHub Pages呢，你需要创建一个Repository，并命名为<code>[你的用户名].github.io</code>。</p>
-<p>至此已经可以通过<code>[你的用户名].github.io</code>来访问你的GitHub Pages了。</p>
-<h1 id="配置GitHub使用的SSH密钥"><a href="#配置GitHub使用的SSH密钥" class="headerlink" title="配置GitHub使用的SSH密钥"></a>配置GitHub使用的SSH密钥</h1><p>首先，请先查看<code>~/.ssh</code>目录下是否已经有生成好了的密钥，如果有了可以不用再生成了。如果没有的话，现在终端执行命令生成一个，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t ed25519 -C <span class="string">"[与你GitHub账号相同的邮箱]"</span></span><br></pre></td></tr></table></figure></p>
-<p>显示如下内容后，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/username/.ssh/id_ed25519):</span><br></pre></td></tr></table></figure></p>
-<p>直接按回车，将密钥保存在默认目录下，接着设置好私钥的密码，回车，电脑会生成SSH密钥。</p>
-<p>现在，将刚刚生成的密钥中的公钥导入到GitHub中：</p>
-<ol>
-<li>终端输入命令<code>cat ~/.ssh/id_ed25519</code>，导出公钥并复制。</li>
-<li>登陆GitHub，进入Account Settings。</li>
-<li>选择SSH Keys，粘贴并添加密钥。</li>
-</ol>
-<p>导入完成后，终端输入<code>ssh -T git@github.com</code>，如果最后是下面的反馈：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi [你的GitHub用户名]! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
-<p>代表已经成功导入密钥。</p>
-<h1 id="安装与配置Git"><a href="#安装与配置Git" class="headerlink" title="安装与配置Git"></a>安装与配置Git</h1><p>首先使用<code>apt</code>安装Git，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
-<p>然后，配置好GitHub所需要的个人信息，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"[你的GitHub用户名]"</span></span><br><span class="line">$ git config --global user.email  <span class="string">"[与你GitHub账号相同的邮箱]"</span></span><br></pre></td></tr></table></figure></p>
-<p>现在，Git已经配置完毕。</p>
-<h1 id="安装与配置Hexo"><a href="#安装与配置Hexo" class="headerlink" title="安装与配置Hexo"></a>安装与配置Hexo</h1><p>Hexo是基于Node.js所开发的，首先我们需要安装Node.js与NPM，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nodejs npm</span><br></pre></td></tr></table></figure></p>
-<p>安装好后，继续安装Hexo，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br><span class="line">$ sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>现在，新建一个文件夹作为Hexo专用的目录，切换到目录中，执行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
-<p>至此，Hexo已经安装完毕。现在修改专用目录下的<code>_config.yml</code>，对Hexo进行配置，将文件末尾有关部署的配置修改为：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/[你的GitHub用户名]/[你的GitHub用户名].github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="部署Hexo到GitHub-Pages"><a href="#部署Hexo到GitHub-Pages" class="headerlink" title="部署Hexo到GitHub Pages"></a>部署Hexo到GitHub Pages</h1><p>依次执行如下命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>输入你的用户名和密码后，回车，稍等片刻，Hexo就会部署上去，如果这里卡住的话，请科学上网。</p>
-<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><ol>
-<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></li>
-<li><a href="https://www.jianshu.com/p/q81RER" target="_blank" rel="noopener">献给写作者的 Markdown 新手指南</a></li>
-<li><a href="https://blog.huihut.com/2017/01/25/MarkdownTutorial/" target="_blank" rel="noopener">Markdown 简易入门教程</a></li>
-<li><a href="https://www.jianshu.com/p/56d99a3049a5" target="_blank" rel="noopener">用Hexo写出第一篇博客</a></li>
-</ol>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
-<li><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">小白独立搭建博客–Github Pages和Hexo简明教程</a></li>
-</ol>
-
+            <p>
+              前言最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。
+为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/26/使用Hexo与Github-Pages搭建博客/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -527,6 +503,16 @@
           
 
           
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+             </div>
+          
 
           
           
@@ -566,7 +552,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动 v3.8.0</div>
 
 
 
@@ -574,7 +560,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Muse</span> v7.0.1</div>
 
 
 
@@ -705,10 +691,85 @@
   
 
   
+  <script src="/js/src/exturl.js?v=7.0.1"></script>
+
 
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
 
 </body>
 </html>
