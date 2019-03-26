@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="BI8CKU与树德中学国际部业余无线电">
 <meta property="og:description" content="前言最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。 为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；第二点">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-26T12:51:37.357Z">
+<meta property="og:updated_time" content="2019-03-26T13:14:42.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo与GitHub Pages搭建博客">
 <meta name="twitter:description" content="前言最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。 为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；第二点">
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-03-26 10:20:28 / 修改时间：20:51:37" itemprop="dateCreated datePublished" datetime="2019-03-26T10:20:28+08:00">2019-03-26</time>
+              <time title="创建时间：2019-03-26 10:20:28 / 修改时间：21:14:42" itemprop="dateCreated datePublished" datetime="2019-03-26T10:20:28+08:00">2019-03-26</time>
             
 
             
@@ -399,7 +399,18 @@
 <h1 id="安装与配置Hexo"><a href="#安装与配置Hexo" class="headerlink" title="安装与配置Hexo"></a>安装与配置Hexo</h1><p>Hexo是基于Node.js所开发的，首先我们需要安装Node.js与NPM，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nodejs npm</span><br></pre></td></tr></table></figure></p>
 <p>安装好后，继续安装Hexo，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br><span class="line">$ sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>现在，新建一个文件夹作为Hexo专用的目录，切换到目录中，执行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
-<p>至此，Hexo已经安装完毕。</p>
+<p>至此，Hexo已经安装完毕。现在修改专用目录下的<code>_config.yml</code>，对Hexo进行配置，将文件末尾有关部署的配置修改为：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/[你的GitHub用户名]/[你的GitHub用户名].github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="部署Hexo到GitHub-Pages"><a href="#部署Hexo到GitHub-Pages" class="headerlink" title="部署Hexo到GitHub Pages"></a>部署Hexo到GitHub Pages</h1><p>依次执行如下命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>输入你的用户名和密码后，回车，稍等片刻，Hexo就会部署上去，如果这里卡住的话，请科学上网。</p>
+<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><ol>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></li>
+<li><a href="https://www.jianshu.com/p/q81RER" target="_blank" rel="noopener">献给写作者的 Markdown 新手指南</a></li>
+<li><a href="https://blog.huihut.com/2017/01/25/MarkdownTutorial/" target="_blank" rel="noopener">Markdown 简易入门教程</a></li>
+<li><a href="https://www.jianshu.com/p/56d99a3049a5" target="_blank" rel="noopener">用Hexo写出第一篇博客</a></li>
+</ol>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">小白独立搭建博客–Github Pages和Hexo简明教程</a></li>
+</ol>
 
       
     </div>
@@ -432,22 +443,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/26/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -513,7 +508,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -566,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册GitHub并创建GitHub-Pages"><span class="nav-number">2.</span> <span class="nav-text">注册GitHub并创建GitHub Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置GitHub使用的SSH密钥"><span class="nav-number">3.</span> <span class="nav-text">配置GitHub使用的SSH密钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置Git"><span class="nav-number">4.</span> <span class="nav-text">安装与配置Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置Hexo"><span class="nav-number">5.</span> <span class="nav-text">安装与配置Hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册GitHub并创建GitHub-Pages"><span class="nav-number">2.</span> <span class="nav-text">注册GitHub并创建GitHub Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置GitHub使用的SSH密钥"><span class="nav-number">3.</span> <span class="nav-text">配置GitHub使用的SSH密钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置Git"><span class="nav-number">4.</span> <span class="nav-text">安装与配置Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置Hexo"><span class="nav-number">5.</span> <span class="nav-text">安装与配置Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署Hexo到GitHub-Pages"><span class="nav-number">6.</span> <span class="nav-text">部署Hexo到GitHub Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸阅读"><span class="nav-number">7.</span> <span class="nav-text">延伸阅读</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
