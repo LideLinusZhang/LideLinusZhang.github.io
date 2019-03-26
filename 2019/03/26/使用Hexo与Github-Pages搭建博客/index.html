@@ -96,21 +96,25 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="使用Hexo搭建Github Page">
-<meta property="og:url" content="http://yoursite.com/2019/03/26/使用Hexo搭建Github-Page/index.html">
+  <meta name="description" content="##前言 最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。 为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；">
+<meta name="keywords" content="计算机技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo与GitHub Pages搭建博客">
+<meta property="og:url" content="http://yoursite.com/2019/03/26/使用Hexo与Github-Pages搭建博客/index.html">
 <meta property="og:site_name" content="BI8CKU与树德中学国际部业余无线电">
+<meta property="og:description" content="##前言 最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。 为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-26T02:21:29.976Z">
+<meta property="og:updated_time" content="2019-03-26T11:14:53.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Hexo搭建Github Page">
+<meta name="twitter:title" content="使用Hexo与GitHub Pages搭建博客">
+<meta name="twitter:description" content="##前言 最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。 为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/26/使用Hexo搭建Github-Page/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/26/使用Hexo与Github-Pages搭建博客/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>使用Hexo搭建Github Page | BI8CKU与树德中学国际部业余无线电</title>
+  <title>使用Hexo与GitHub Pages搭建博客 | BI8CKU与树德中学国际部业余无线电</title>
   
 
 
@@ -289,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/使用Hexo搭建Github-Page/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/使用Hexo与Github-Pages搭建博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lide Zhang, BI8CKU">
@@ -306,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用Hexo搭建Github Page
+          <h1 class="post-title" itemprop="name headline">使用Hexo与GitHub Pages搭建博客
 
               
             
@@ -332,7 +336,7 @@
                 
               
 
-              <time title="Created: 2019-03-26 10:20:28 / Modified: 10:21:29" itemprop="dateCreated datePublished" datetime="2019-03-26T10:20:28+08:00">2019-03-26</time>
+              <time title="Created: 2019-03-26 10:20:28 / Modified: 19:14:53" itemprop="dateCreated datePublished" datetime="2019-03-26T10:20:28+08:00">2019-03-26</time>
             
 
             
@@ -371,7 +375,17 @@
       
 
       
-        
+        <p>##前言</p>
+<p>最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。</p>
+<p>为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；第二点就是因为GitHub的安全性与稳定性，GitHub作为全世界最大的源代码托管库，其安全性和稳定性是毋庸置疑的（当然，如果你的GitHub账户密码太弱，也没有开启二步验证，你的GitHub Pages肯定是处于危险中了），并且可以启用https协议，进一步增加安全性，而如果使用VPS，一切安全设置都要自己解决，且稳定性很难做到GitHub的水平，一旦被DDoS，也只能关站。</p>
+<center>注：以下全部操作仅在Ubuntu下测试过，不保证在其他平台上的可用性</center>
+
+<p>##注册GitHub并创建GitHub Pages</p>
+<p>GitHub Pages显然需要GitHub的账号，关于如何注册这里就不赘述了，相信来到这里的各位一定以及拥有了自己的账号。</p>
+<p>那如何创建自己的GitHub Pages呢，你需要创建一个Repository，并命名为<code>[你的用户名].github.io</code>。</p>
+<p>至此已经可以通过<code>[你的用户名].github.io</code>来访问你的GitHub Pages了。</p>
+<p>##配置GitHub使用的SSL密钥</p>
+
       
     </div>
 
@@ -391,6 +405,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机技术/" rel="tag"># 计算机技术</a>
+          
+        </div>
       
 
       
@@ -477,6 +497,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
               
             </nav>
           
