@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang>
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,20 +96,23 @@
 
 
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="树德中学国际部业余无线电爱好者协会的展示平台与BI8CKU的个人博客">
+<meta property="og:type" content="website">
 <meta property="og:title" content="BI8CKU与树德中学国际部业余无线电">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://bi8cku.club/index.html">
 <meta property="og:site_name" content="BI8CKU与树德中学国际部业余无线电">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="树德中学国际部业余无线电爱好者协会的展示平台与BI8CKU的个人博客">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BI8CKU与树德中学国际部业余无线电">
+<meta name="twitter:description" content="树德中学国际部业余无线电爱好者协会的展示平台与BI8CKU的个人博客">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="https://bi8cku.club/">
 
 
 
@@ -160,7 +163,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -192,7 +195,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -220,7 +223,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -237,7 +240,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -289,11 +292,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/使用Hexo与Github-Pages搭建博客/">
+    <link itemprop="mainEntityOfPage" href="https://bi8cku.club/2019/03/26/使用Hexo与Github-Pages搭建博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lide Zhang, BI8CKU">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="Lide Zhang, BI8CKU/W5LUS">
+      <meta itemprop="description" content="树德中学国际部业余无线电爱好者协会的展示平台与BI8CKU的个人博客">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -327,14 +330,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-03-26 10:20:28 / Modified: 19:14:53" itemprop="dateCreated datePublished" datetime="2019-03-26T10:20:28+08:00">2019-03-26</time>
+              <time title="创建时间：2019-03-26 10:20:28 / 修改时间：20:51:37" itemprop="dateCreated datePublished" datetime="2019-03-26T10:20:28+08:00">2019-03-26</time>
             
 
             
@@ -375,16 +378,31 @@
       
         
           
-            <p>##前言</p>
-<p>最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。</p>
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近国际部要求每个社团注册QQ空间作为展示平台，作为技术人员，如果就使用QQ空间，未必太颓废了，就借这个契机，把Github Pages部署起来，作为展示平台。</p>
 <p>为什么要用GitHub Pages，而不用VPS或者其他空间呢？第一点就是因为GitHub是免费的，不仅是使用免费，空间和流量也是无限的，还带有CDN，对于一个树德国际部社团来说，在学校拨款无望的窘境下也只有GitHub可用了；第二点就是因为GitHub的安全性与稳定性，GitHub作为全世界最大的源代码托管库，其安全性和稳定性是毋庸置疑的（当然，如果你的GitHub账户密码太弱，也没有开启二步验证，你的GitHub Pages肯定是处于危险中了），并且可以启用https协议，进一步增加安全性，而如果使用VPS，一切安全设置都要自己解决，且稳定性很难做到GitHub的水平，一旦被DDoS，也只能关站。</p>
 <center>注：以下全部操作仅在Ubuntu下测试过，不保证在其他平台上的可用性</center>
 
-<p>##注册GitHub并创建GitHub Pages</p>
-<p>GitHub Pages显然需要GitHub的账号，关于如何注册这里就不赘述了，相信来到这里的各位一定以及拥有了自己的账号。</p>
+<h1 id="注册GitHub并创建GitHub-Pages"><a href="#注册GitHub并创建GitHub-Pages" class="headerlink" title="注册GitHub并创建GitHub Pages"></a>注册GitHub并创建GitHub Pages</h1><p>GitHub Pages显然需要GitHub的账号，关于如何注册这里就不赘述了，相信来到这里的各位一定以及拥有了自己的账号。</p>
 <p>那如何创建自己的GitHub Pages呢，你需要创建一个Repository，并命名为<code>[你的用户名].github.io</code>。</p>
 <p>至此已经可以通过<code>[你的用户名].github.io</code>来访问你的GitHub Pages了。</p>
-<p>##配置GitHub使用的SSL密钥</p>
+<h1 id="配置GitHub使用的SSH密钥"><a href="#配置GitHub使用的SSH密钥" class="headerlink" title="配置GitHub使用的SSH密钥"></a>配置GitHub使用的SSH密钥</h1><p>首先，请先查看<code>~/.ssh</code>目录下是否已经有生成好了的密钥，如果有了可以不用再生成了。如果没有的话，现在终端执行命令生成一个，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t ed25519 -C <span class="string">"[与你GitHub账号相同的邮箱]"</span></span><br></pre></td></tr></table></figure></p>
+<p>显示如下内容后，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/username/.ssh/id_ed25519):</span><br></pre></td></tr></table></figure></p>
+<p>直接按回车，将密钥保存在默认目录下，接着设置好私钥的密码，回车，电脑会生成SSH密钥。</p>
+<p>现在，将刚刚生成的密钥中的公钥导入到GitHub中：</p>
+<ol>
+<li>终端输入命令<code>cat ~/.ssh/id_ed25519</code>，导出公钥并复制。</li>
+<li>登陆GitHub，进入Account Settings。</li>
+<li>选择SSH Keys，粘贴并添加密钥。</li>
+</ol>
+<p>导入完成后，终端输入<code>ssh -T git@github.com</code>，如果最后是下面的反馈：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi [你的GitHub用户名]! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+<p>代表已经成功导入密钥。</p>
+<h1 id="安装与配置Git"><a href="#安装与配置Git" class="headerlink" title="安装与配置Git"></a>安装与配置Git</h1><p>首先使用<code>apt</code>安装Git，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
+<p>然后，配置好GitHub所需要的个人信息，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"[你的GitHub用户名]"</span></span><br><span class="line">$ git config --global user.email  <span class="string">"[与你GitHub账号相同的邮箱]"</span></span><br></pre></td></tr></table></figure></p>
+<p>现在，Git已经配置完毕。</p>
+<h1 id="安装与配置Hexo"><a href="#安装与配置Hexo" class="headerlink" title="安装与配置Hexo"></a>安装与配置Hexo</h1><p>Hexo是基于Node.js所开发的，首先我们需要安装Node.js与NPM，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nodejs npm</span><br></pre></td></tr></table></figure></p>
+<p>安装好后，继续安装Hexo，<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br><span class="line">$ sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>现在，新建一个文件夹作为Hexo专用的目录，切换到目录中，执行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>至此，Hexo已经安装完毕。</p>
 
           
         
@@ -441,11 +459,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://bi8cku.club/2019/03/26/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lide Zhang, BI8CKU">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="Lide Zhang, BI8CKU/W5LUS">
+      <meta itemprop="description" content="树德中学国际部业余无线电爱好者协会的展示平台与BI8CKU的个人博客">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -479,14 +497,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-03-26 07:50:10" itemprop="dateCreated datePublished" datetime="2019-03-26T07:50:10+08:00">2019-03-26</time>
+              <time title="创建时间：2019-03-26 07:50:10" itemprop="dateCreated datePublished" datetime="2019-03-26T07:50:10+08:00">2019-03-26</time>
             
 
             
@@ -604,8 +622,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Lide Zhang, BI8CKU</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-author-name" itemprop="name">Lide Zhang, BI8CKU/W5LUS</p>
+              <p class="site-description motion-element" itemprop="description">树德中学国际部业余无线电爱好者协会的展示平台与BI8CKU的个人博客</p>
           </div>
 
           
@@ -616,7 +634,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -633,7 +651,7 @@
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   
                 </div>
               
@@ -676,7 +694,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Lide Zhang, BI8CKU</span>
+  <span class="author" itemprop="copyrightHolder">Lide Zhang, BI8CKU/W5LUS</span>
 
   
 
@@ -684,7 +702,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -692,7 +710,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 
 
